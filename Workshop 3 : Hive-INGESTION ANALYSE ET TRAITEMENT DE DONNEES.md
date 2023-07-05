@@ -47,27 +47,28 @@ show databases;
 ```
 - Construire la requête de création et de remplissage d'un tableau dans la base de donnée à partir su fichier .csv sauvegardé :
   - Définir la table associée au fichier csv dans Hive (Create Table) en respectant le schéma noté précédemment, par ewemple:
-```console
-  create table driver_table(
-     driverId int,
-     name varchar(20),
-     ssn int,
-     location varchar(20),
-     certified char(1),
-     wage_plan varchar(20)
-  )
-```
-  - enregistrer le fichier dans votre repertoire
-```console
-  row format 
-  delimited fields terminated by ',' 
-  stored as textfile   
-  location '/hive/data/votre_prenom_rep'
-```
-  - supprimer l'entête :
-```console
-  TBLPROPERTIES('skip.header.line.count'='1');
-```
+   ```console
+     create table driver_table(
+       driverId int,
+       name varchar(20),
+       ssn int,
+       location varchar(20),
+       certified char(1),
+       wage_plan varchar(20)
+    )
+  ```
+   - enregistrer le fichier dans votre repertoire
+    ```console
+     row format 
+     delimited fields terminated by ',' 
+     stored as textfile   
+     location '/hive/data/votre_prenom_rep'
+    ```
+   - supprimer l'entête :
+
+     ```console
+       TBLPROPERTIES('skip.header.line.count'='1');
+     ```
 - La commande doit donc ressembler à (Attention à la syntaxe) :
 ```console
 create table driver_table(
@@ -90,3 +91,23 @@ TBLPROPERTIES('skip.header.line.count'='1');
 CREATE TABLE driver_table (driverId STRING,name STRING,ssn STRING,location STRING,certified STRING,wageplan STRING) ROW FORMAT DELIMITED FIELDS TERMINATED BY ‘,’ STORED AS TEXTFILE tblproperties(“skip.header.line.count”=“1”);
 ```
 - SQL n'est pas sensible à la case
+- Insérer les données du fichier de votre chemin local dans votre table , par exemple:
+```console
+LOAD DATA LOCAL INPATH '/home/hadoop/driver_data/drivers.csv' OVERWRITE INTO TABLE driver_table;
+```
+- lister les données insérées:
+```console
+select * from driver_table;
+```
+- lister toutes les données des drivers certifiés
+```console
+select * from driver_table
+where certified='Y';
+```
+- compte des drivers non certifiés:
+```console
+select count(*) from driver_table where certified='N';
+```
+- A votre tour ([resources](https://people.sc.fsu.edu/~jburkardt/data/csv/csv.html))
+ - charger le contenu de deux autres fichiers dans deux autres tableaux dans la même base
+ - ecrire des requêtes select pour filtrer et/ou ordonner.
