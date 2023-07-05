@@ -80,6 +80,6 @@ public class WordCount {
 export HADOOP_CLASSPATH="/opt/hadoop-2.7.4/share/hadoop/common/hadoop-common-2.7.4.jar:/opt/hadoop-2.7.4/share/hadoop/mapreduce/hadoop-mapreduce-client-core-2.7.4.jar:/opt/hadoop-2.7.4/share/hadoop/common/lib/*:/opt/hadoop-2.7.4/share/hadoop/mapreduce/lib/*"
 ```
 ```console
-export HADOOP_CLASSPATH="/opt/hadoop-2.7.4/share/hadoop/common/hadoop-common-2.7.4.jar:/opt/hadoop-2.7.4/share/hadoop/mapreduce/hadoop-mapreduce-client-core-2.7.4.jar:/opt/hadoop-2.7.4/share/hadoop/common/lib/*:/opt/hadoop-2.7.4/share/hadoop/mapreduce/lib/*"
+javac -cp "$HADOOP_CLASSPATH" WordCount.java 
 ```
 - En définissant HADOOP_CLASSPATH avec ces chemins, vous indiquez au compilateur Java et aux outils Hadoop où trouver les classes nécessaires pour la compilation et l'exécution du programme WordCount.
