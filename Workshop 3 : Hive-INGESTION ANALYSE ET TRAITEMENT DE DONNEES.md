@@ -1,6 +1,6 @@
 # INGESTION ANALYSE ET TRAITEMENT DE DONNEES
 
--Accédez au container de hive. . :
+- Accédez au container de hive. . :
 ```console
 docker exec -it hive-server /bin/bash
 ```
@@ -93,7 +93,7 @@ CREATE TABLE driver_table (driverId STRING,name STRING,ssn STRING,location STRIN
 - SQL n'est pas sensible à la case
 - Insérer les données du fichier de votre chemin local dans votre table , par exemple:
 ```console
-LOAD DATA LOCAL INPATH '/home/hadoop/driver_data/drivers.csv' OVERWRITE INTO TABLE driver_table;
+LOAD DATA LOCAL INPATH '/opt/driver_data/drivers.csv' OVERWRITE INTO TABLE driver_table;
 ```
 - lister les données insérées:
 ```console
