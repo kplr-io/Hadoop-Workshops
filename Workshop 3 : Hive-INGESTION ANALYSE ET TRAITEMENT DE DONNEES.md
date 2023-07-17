@@ -1,3 +1,7 @@
+## HIVE :
+
+![image](https://github.com/zineb-kplr/Hadoop-Workshops/assets/123749462/9fbd1b04-423b-40b4-9ba5-dd4ff827e189)
+
 # INGESTION ANALYSE ET TRAITEMENT DE DONNEES
 
 - Accédez au container de hive. . :
