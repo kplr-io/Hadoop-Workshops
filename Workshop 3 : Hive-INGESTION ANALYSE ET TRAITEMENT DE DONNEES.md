@@ -59,7 +59,7 @@ show databases;
        location varchar(20),
        certified char(1),
        wage_plan varchar(20)
-    )
+    );
   ```
    - enregistrer le fichier dans votre repertoire
     ```console
