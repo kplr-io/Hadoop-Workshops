@@ -8,7 +8,7 @@
 ```console
 docker exec -it hive-server /bin/bash
 ```
-- Chercher un fichier CSV Open Data de taille moyenne [ici](https://raw.githubusercontent.com/hortonworks/data-tutorials/master/tutorials/hdp/how-to-process-data-with-apache-hive/assets/driver_data.zip)
+- Telecharger un fichier CSV de la façon suivante
 - Utiliser la commande wget DANS VOTRE REPERTOIRE LOCAL (/home/hadoop/):
 
 ```console
